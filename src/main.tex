@@ -1,0 +1,42 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{metropolis}
+
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{footline}[frame number]
+
+% Encoding
+\usepackage{ae,lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Language
+\usepackage[main=french,english]{babel}
+
+\usepackage{url}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{qrcode}
+\usepackage{graphicx}
+\usepackage{multicol}
+
+\input{listing}
+\hyphenation{onepoint}
+\newcommand{\etal}{\textit{et al}. }
+\newcommand{\ie}{\textit{i}.\textit{e}. }
+\newcommand{\eg}{\textit{e}.\textit{g}. }
+
+\begin{document}
+    \input{0-header}
+    \input{1-introduction}
+    \input{2-uml}
+    \input{3-environnement}
+    \input{4-pratiques}
+    \input{5-persistence}
+    \input{6-collaboration}
+    \input{7-tests}
+    \input{8-contenerisation}
+    \input{9-patrons}
+    \input{10-documentation}
+\end{document}

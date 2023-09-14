@@ -1,0 +1,13 @@
+# Intellij
+.idea/
+*.iml
+
+# Latex
+out/
+auxil/
+*.log
+*.aux
+*.pdf
+
+# Export
+*.docx

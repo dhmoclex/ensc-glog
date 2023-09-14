@@ -1,0 +1,30 @@
+\lstset{
+    numbers=none,
+    stepnumber=1,
+    numbersep=5pt,
+    basicstyle=\ttfamily\scriptsize,
+    keywordstyle=\color{keyword}\bfseries\ttfamily,
+    commentstyle=\color{comment}\ttfamily,
+    stringstyle=\color{string}\ttfamily,
+    identifierstyle=,
+    showstringspaces=false,
+    columns=flexible,
+    keepspaces=true,
+    breaklines=true,
+    captionpos=b,
+    tabsize=2,
+    frame=none,
+}
+
+\definecolor{keyword}{HTML}{2771a3}
+\definecolor{pattern}{HTML}{b53c2f}
+\definecolor{string}{HTML}{be681c}
+\definecolor{relation}{HTML}{7e4894}
+\definecolor{variable}{HTML}{107762}
+\definecolor{comment}{HTML}{8d9094}
+
+\lstdefinelanguage{cypher}
+{
+    morekeywords={MATCH, OPTIONAL, WHERE, NOT, AND, OR, XOR, RETURN, DISTINCT, ORDER, BY, ASC, ASCENDING, DESC, DESCENDING, UNWIND, AS, UNION, WITH, ALL, CREATE, DELETE, DETACH, REMOVE, SET, MERGE, SET, SKIP, LIMIT, IN, CASE, WHEN, THEN, ELSE, END, INDEX, DROP, UNIQUE, CONSTRAINT, EXPLAIN, PROFILE, START, CALL},
+    morecomment=[l]{//},
+}
