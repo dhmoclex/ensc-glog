@@ -1,37 +1,240 @@
-% Présentation générale, technologie front back autres, objectif tp
-% README, markdown, HTTP, Console
-% Rappel POO ? Structure etc
+% Présentation générale, technologie front back autres,
+% README, markdown, Console
 % https://en.wikipedia.org/wiki/Software_design#Design_considerations
+
+
 \section{Introduction}
 \label{sec:introduction}
 
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
-\begin{frame} \frametitle{Titre} \end{frame}
+\begin{frame}
+    \frametitle{L'objectif du module}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{figures/introduction/overview}
+        \label{fig:overview}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Le Web}
+
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.5\linewidth]{figures/introduction/http-layers}
+        \label{fig:web}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Le protocole HTTP}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \lstinputlisting[
+                language=http,
+                caption=Requête,
+                label=lst:http-request]
+            {figures/introduction/http-request.txt}
+        \end{column}
+
+        \begin{column}{0.5\textwidth}
+            \lstinputlisting[
+                language=http,
+                caption=Réponse,
+                label=lst:http-response]
+            {figures/introduction/http-response.txt}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Méthodes de requête HTTP}
+
+    \begin{columns}
+        \begin{column}{0.8\textwidth}
+            HTTP définit un ensemble de méthodes (verbes) de requête qui indiquent l'action que l'on souhaite réaliser sur la ressource indiquée.
+        \end{column}
+        \begin{column}{0.2\textwidth}
+
+            \qrcode[height=60pt]{https://developer.mozilla.org/fr/docs/Web/HTTP/Methods}
+        \end{column}
+    \end{columns}
+
+    \begin{itemize}
+        \item \textbf{GET} : demande une représentation de la ressource spécifiée, les requêtes GET doivent uniquement être utilisées afin de récupérer des données.
+        \item \textbf{POST} : est utilisée pour envoyer une entité vers la ressource indiquée, cela entraîne généralement un changement d'état ou des effets de bord sur le serveur.
+        \item \textbf{PUT} : remplace toutes les représentations actuelles de la ressource visée par le contenu de la requête.
+        \item \textbf{DELETE} : supprime la ressource indiquée.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Mon parcours}
+
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \begin{itemize}
+                \item 2020 : Doctorat sur la maintenabilité logicielle
+                \item 2017 : Développeur \emph{Java}
+                \item 2016 : Expert automatisation \emph{Cucumber}
+                \item 2011 : Chef de projet testing
+                \item 2008 : Testeur fonctionnel
+                \item 2007 : Diplômé de l'ENSC
+                \item 2004 : Licence d'électronique, électrotechnique et automatique
+            \end{itemize}
+        \end{column}
+
+        \begin{column}{0.4\textwidth}
+            \begin{figure}
+                \centering
+                \includesvg[width=0.8\textwidth]{figures/introduction/code-graph}
+                \label{fig:code-graph}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Architecture}
+
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.5\linewidth]{figures/introduction/architecture}
+        \label{fig:architexture}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Controlleur}
+
+    \lstinputlisting[
+        language=c,
+        label=lst:controller]
+    {figures/introduction/controller.cs}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{DbContext}
+
+    \lstinputlisting[
+        language=c,
+        label=lst:dbcontext]
+    {figures/introduction/dbcontext.cs}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Les facettes du génie logiciel}
+
+    \begin{itemize}
+        \item l'analyse fonctionnelle
+        \item l'architecture
+        \item la programmation
+        \item les tests
+        \item la maintenance
+        \item la gestion de projet
+        \item l'administration système
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Modélisation UML}
+
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.5\linewidth]{figures/introduction/uml}
+        \label{fig:uml}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{L'environnement du développeur}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{figures/introduction/intellij}
+        \label{fig:environnement}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Les pratiques du développeur}
+
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.5\linewidth]{figures/introduction/solid}
+        \label{fig:pratiques}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Les base de données}
+
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.5\linewidth]{figures/introduction/database}
+        \label{fig:database}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{La collaboration dans une équipe}
+
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.5\linewidth]{figures/introduction/agile}
+        \label{fig:collaboration}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Les tests composants}
+
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.5\linewidth]{figures/introduction/tests}
+        \label{fig:tests}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{La contenerisation}
+
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.5\linewidth]{figures/introduction/docker}
+        \label{fig:conteneur}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Les patrons logiciels}
+
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.5\linewidth]{figures/introduction/patrons}
+        \label{fig:patrons}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Le Document d'Architecture Technique}
+
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.5\linewidth]{figures/introduction/c4-overview}
+        \label{fig:dat}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{La méthode du canard en plastique}
+
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.5\linewidth]{figures/introduction/canard}
+        \label{fig:canard}
+    \end{figure}
+\end{frame}

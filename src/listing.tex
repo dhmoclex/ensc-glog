@@ -28,3 +28,29 @@
     morekeywords={MATCH, OPTIONAL, WHERE, NOT, AND, OR, XOR, RETURN, DISTINCT, ORDER, BY, ASC, ASCENDING, DESC, DESCENDING, UNWIND, AS, UNION, WITH, ALL, CREATE, DELETE, DETACH, REMOVE, SET, MERGE, SET, SKIP, LIMIT, IN, CASE, WHEN, THEN, ELSE, END, INDEX, DROP, UNIQUE, CONSTRAINT, EXPLAIN, PROFILE, START, CALL},
     morecomment=[l]{//},
 }
+
+\lstdefinelanguage{http}{%
+    morekeywords=[1]{HTTP,%
+    GET,POST,PUT,HEAD,DELETE,PATCH,OPTIONS,CONNECT,TRACE,%
+    OK,Precondition,Failed,Not,Modified,Acceptable,%
+    Created,Found,Accepted,No,Content,Gone,Multiple,Choices,See,Other,Method,Allowed,%
+    Unsupported,Media,Type,Required%
+    },%
+    morekeywords=[2]{%
+        Accept,Accept-Encoding,Accept-Language,Alternates,%
+        Content-Type,Content-Language,Content-Encoding,Content-Location,Content-Length,%
+        If-Match,If-None-Match,If-Modified-Since,If-Unmodified-Since,%
+        ETag,Last-Modified,Negotiate,TCN,Vary,%
+        Cache-control,%
+        Allow,%
+        Date,%
+        Host,%
+        Location,%
+        Server,%
+        User-Agent,%
+    },%
+    alsodigit=-,%
+    morestring=[b]",%
+    morecomment=[l]\$,%
+    morecomment=[s]{[}{]},%
+}[keywords,comments,strings]
