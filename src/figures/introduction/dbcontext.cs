@@ -1,8 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-using MvcUniversity.Models;
-
-namespace MvcUniversity.Data;
-
 public class UniversityContext : DbContext
 {
     public DbSet<Student> Students { get; set; } = null!;

@@ -69,7 +69,6 @@
     \end{itemize}
 \end{frame}
 
-
 \begin{frame}
     \frametitle{Mon parcours}
 
@@ -97,6 +96,41 @@
 \end{frame}
 
 \begin{frame}
+    \frametitle{Le plan du module}
+
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \begin{itemize}
+                \item Modélisation UML
+                \item L'environnement du développeur
+                \item Les pratiques du développeur
+                \item Les base de données
+                \item La collaboration dans une équipe
+                \item Les tests composants
+                \item La contenerisation
+                \item Le déploiement en continu
+                \item Les patrons logiciels
+                \item Le Document d'Architecture Technique
+            \end{itemize}
+        \end{column}
+
+        \begin{column}{0.4\textwidth}
+            \begin{itemize}
+                \item WinForms
+                \item UML
+                \item Git et GitHub
+                \item EFTodo
+                \item EFUniversity
+                \item MvcTodo
+                \item MvcUniversity (2)
+                \item Projet (3)
+                \item TPDS
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
     \frametitle{Architecture}
 
     \begin{figure}
@@ -106,11 +140,13 @@
     \end{figure}
 \end{frame}
 
+
+
 \begin{frame}
     \frametitle{Controlleur}
 
     \lstinputlisting[
-        language=c,
+        language={[Sharp]C},
         label=lst:controller]
     {figures/introduction/controller.cs}
 \end{frame}
@@ -120,7 +156,7 @@
     \frametitle{DbContext}
 
     \lstinputlisting[
-        language=c,
+        language={[Sharp]C},
         label=lst:dbcontext]
     {figures/introduction/dbcontext.cs}
 \end{frame}
@@ -128,15 +164,26 @@
 \begin{frame}
     \frametitle{Les facettes du génie logiciel}
 
-    \begin{itemize}
-        \item l'analyse fonctionnelle
-        \item l'architecture
-        \item la programmation
-        \item les tests
-        \item la maintenance
-        \item la gestion de projet
-        \item l'administration système
-    \end{itemize}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \begin{itemize}
+                \item l'analyse fonctionnelle
+                \item l'architecture
+                \item la programmation
+                \item les tests
+                \item la maintenance
+                \item la gestion de projet
+                \item l'administration système
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=\textwidth]{figures/introduction/software-engineering}
+                \label{fig:engineering}
+            \end{figure}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}
@@ -210,6 +257,16 @@
 \end{frame}
 
 \begin{frame}
+    \frametitle{Le déploiement en continu}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{figures/introduction/continuous-deployment}
+        \label{fig:deployment}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
     \frametitle{Les patrons logiciels}
 
     \begin{figure}
@@ -230,11 +287,43 @@
 \end{frame}
 
 \begin{frame}
+    \frametitle{Deux livres de référence}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[height=\textwidth]{figures/introduction/book-design-patterns}
+                \label{fig:book-design-patterns}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[height=\textwidth]{figures/introduction/book-clean-code}
+                \label{fig:book-clean-code}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
     \frametitle{La méthode du canard en plastique}
 
-    \begin{figure}
-        \centering
-        \includegraphics[height=0.5\linewidth]{figures/introduction/canard}
-        \label{fig:canard}
-    \end{figure}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[height=\linewidth]{figures/introduction/canard}
+                \label{fig:canard}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            La méthode du canard en plastique consiste à expliquer méticuleusement le code source que l'on a écrit
+            à un collègue, à un simple passant, ou même un canard en plastique.
+
+            \bigskip
+            L'avantage du canard en plastique sur un interlocuteur humain est que
+            \emph{sa capacité d'écoute et sa patience sont sans limite}.
+        \end{column}
+    \end{columns}
 \end{frame}
