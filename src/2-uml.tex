@@ -1,2 +1,121 @@
 \section{Modélisation UML}
 \label{sec:uml}
+
+\begin{frame}
+    \frametitle{Définition}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            Le langage de modélisation unifié (UML) est une famille de \textbf{notations graphiques},
+            soutenues par un méta-modèle unique,
+            qui aident \underline{à décrire et à concevoir} des systèmes logiciels,
+            en particulier des systèmes logiciels construits à l'aide du style orienté objet.
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{figures/uml/uml-historie}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Les diagrammes}
+    \begin{itemize}
+        \item Diagrammes de structure
+        \item Diagrammes de comportement
+    \end{itemize}
+    \centering
+    \includegraphics[height=0.4\linewidth]{figures/uml/uml-diagrammes}
+\end{frame}
+
+\subsection{Diagramme de classes}
+\label{subsec:diagramme-classes}
+
+\begin{frame}
+    \frametitle{Diagramme de classes}
+    Un diagramme de classes \textbf{décrit les types d'objets du système}
+    et les différents types de \underline{relations statiques} qui existent entre eux.
+    Les diagrammes de classes montrent également
+    \emph{les propriétés et les opérations} d'une classe
+    ainsi que les contraintes qui s'appliquent à la manière dont les objets sont connectés.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Une classe}
+    \centering
+    \includegraphics[height=0.5\linewidth]{figures/uml/classe}
+\end{frame}
+
+\begin{frame}
+    \frametitle{La généralisation (héritage)}
+    \centering
+    \includegraphics[height=0.5\linewidth]{figures/uml/classe-héritage}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Un diagramme de classes simple}
+    \centering
+    \includegraphics[height=0.5\linewidth]{figures/uml/classe-complet}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Les propriété comme association ou attribut ?}
+    \centering
+    \includegraphics[height=0.15\linewidth]{figures/uml/classe-propriétés-1}
+    \vfill
+    \includegraphics[height=0.25\linewidth]{figures/uml/classe-propriétés-2}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Cardinalité et directionnalité}
+    \begin{itemize}
+        \item \textbf{Optionnel} implique une limite inférieure de 0 ;
+        \item \textbf{Obligatoire} implique une limite inférieure de 1 ou éventuellement plus ;
+        \item \textbf{Une valeur unique} implique une limite supérieure de 1 ;
+        \item \textbf{Une valeur multiple} implique une limite supérieure à 1 (généralement *).
+    \end{itemize}
+    \vfill
+    \includegraphics[width=\textwidth]{figures/uml/classe-bidirectionnelle}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Dépendance}
+    Une dépendance existe entre deux éléments si des
+    modifications de la définition d'un élément (le fournisseur)
+    peuvent entraîner des modifications de l'autre (le client).
+    \vfill
+    \includegraphics[width=\textwidth]{figures/uml/classe-dépendance}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Agrégation et composition}
+    \centering
+    \includegraphics[width=\textwidth]{figures/uml/classe-agrégation-composition}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Implémentation}
+    \centering
+    \includegraphics[height=0.5\linewidth]{figures/uml/classe-implémentation}
+\end{frame}
+
+\begin{frame}
+    \frametitle{PlantUML}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \lstinputlisting[
+                basicstyle=\tiny,
+                label=lst:classe-plantuml]
+            {figures/uml/classe-plantuml.puml}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \centering
+            \includegraphics[width=0.8\linewidth]{figures/uml/classe-plantuml}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Un livres de référence}
+    \centering
+    \includegraphics[height=0.5\linewidth]{figures/uml/uml-book}
+\end{frame}
