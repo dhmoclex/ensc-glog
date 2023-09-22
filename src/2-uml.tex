@@ -1,6 +1,8 @@
 \section{Modélisation UML}
 \label{sec:uml}
 
+% todo: Avant le cours relire les chapitres 3, 4, 5 et 11.
+
 \begin{frame}
     \frametitle{Définition}
     \begin{columns}
@@ -99,7 +101,7 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{PlantUML}
+    \frametitle{Diagrammme de classes PlantUML}
     \begin{columns}
         \begin{column}{0.4\textwidth}
             \lstinputlisting[
@@ -110,6 +112,99 @@
         \begin{column}{0.6\textwidth}
             \centering
             \includegraphics[width=0.8\linewidth]{figures/uml/classe-plantuml}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{Diagramme de séquence}
+\label{subsec:diagramme-sequence}
+
+\begin{frame}
+    \frametitle{Diagramme de séquence}
+    Un diagramme de séquence montre la \textbf{collaboration dynamique} entre plusieurs objets
+    en décrivant \emph{l’ordre temporel} dans lequel les messages sont envoyés entre eux.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Un permier diagramme de séquence}
+    \centering
+    \includegraphics[height=0.5\linewidth]{figures/uml/sequence-exemple-centralisé}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Le même, mais distribué au lieu de centralisé}
+    \centering
+    \includegraphics[height=0.5\linewidth]{figures/uml/sequence-exemple-distribué}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Création et suppression des participants}
+    \centering
+    \includegraphics[height=0.5\linewidth]{figures/uml/sequence-creation-deletion}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Fragments : Boucles, conditions, etc}
+    \centering
+    \includegraphics[height=0.5\linewidth]{figures/uml/sequence-fragments}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Quelques opérateurs de fragments}
+    \begin{itemize}
+        \item \textbf{alt} : Fragments multiples alternatifs, seulement celui dont la garde est vraie s'exécutera.
+        \item \textbf{opt} : Facultatif, le fragment ne s'exécute que si la condition fournie est vrai.
+        \item \textbf{par} : Parallèle, chaque fragment est traité en parallèle.
+        \item \textbf{loop} : Boucle, le fragment peut s'exécuter plusieurs fois et la garde indique la base de l'itération.
+        \item \textbf{ref} : Référence, fait référence à une interaction définie sur un autre diagramme.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Diagramme de séquence PlantUML}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            %todo: problème d'affichage du listing...
+            \lstinputlisting[
+                basicstyle=\tiny,
+                label=lst:sequence-plantuml]
+            {figures/uml/sequence-plantuml.puml}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \centering
+            \includegraphics[height=0.8\linewidth]{figures/uml/sequence-plantuml}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{Diagramme d'activité}
+\label{subsec:diagramme-activite}
+
+\begin{frame}
+    \frametitle{Diagramme d'activité}
+    Les diagrammes d'activités sont une technique pour décrire
+    la \textbf{logique procédurale}, les \textbf{processus métier} et les \textbf{flux de travail}.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Un exemple simple de diagramme d'activité}
+    \centering
+    \includegraphics[height=0.5\linewidth]{figures/uml/activite-exemple}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Diagramme d'activité PlantUML}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            %todo: problème d'affichage du listing...
+            \lstinputlisting[
+                basicstyle=\tiny,
+                label=lst:activite-plantuml]
+            {figures/uml/activite-plantuml.puml}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \centering
+            \includegraphics[height=0.8\linewidth]{figures/uml/activite-plantuml}
         \end{column}
     \end{columns}
 \end{frame}
