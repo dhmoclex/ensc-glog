@@ -1,4 +1,169 @@
 \section{L'environnement du développeur}
 \label{sec:environnement}
 
-% Environnement de dev, debug, Git avancé (branche rebase), stacktrace
+\subsection{L'environnement}
+\label{subsec:environnement}
+
+\begin{frame}
+    \frametitle{Environnement de développement intégré (IDE)}
+
+    Un environnement de développement intégré est une application logicielle
+    qui fournit des \emph{fonctionnalités complètes pour le développement de logiciels}.
+
+    Les IDE sont conçus pour \textbf{maximiser la productivité des programmeurs}
+    en fournissant des composants étroitement intégrés qui fournissent de nombreuses fonctionnalités :
+    \begin{itemize}
+        \item Edition de texte ;
+        \item Vérification de syntaxe ;
+        \item Gestion de version ;
+        \item Compilation ;
+        \item Gestion des tests ;
+        \item Débogage de logiciel ;
+        \item \ldots
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Une usine à gaz\ldots}
+    \centering
+    \includegraphics[height=0.5\linewidth]{figures/environnement/vscode}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Définition et références}
+    \centering
+    \Huge
+    \textbf{CTRL + CLIC}
+
+    \includegraphics[height=0.4\linewidth]{figures/environnement/controle-clic}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Recherche}
+    \centering
+    \Huge
+    \textbf{CTRL + (MAJ) + F}
+
+    \includegraphics[height=0.4\linewidth]{figures/environnement/rechercher}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Les expressions régulières}
+    \begin{columns}
+        \begin{column}{0.7\textwidth}
+            \begin{itemize}
+                \item \verb|[A-Z]\w+| : n'importe quel mot qui commence par une majuscule ;
+                \item \verb|.*| : n'importe quelle suite de caractère (sauf \verb|\n| et \verb|\r|) ;
+                \item \verb|a*\w+| : \verb|a*| ne sert à rien ;
+                \item \verb|[+-]?(\d*[.])?\d+| : Nombre à virgule flottante.
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.3\textwidth}
+            \centering
+
+            \qrcode[height=70pt]{https://regexr.com/}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Remplacer à l'aide des expressions régulières}
+    \centering
+    \includegraphics[height=0.4\linewidth]{figures/environnement/remplacer}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Renommer un élément de programme}
+    \centering
+    \Huge
+    \textbf{F2}
+
+    \includegraphics[height=0.4\linewidth]{figures/environnement/renommer}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Refactoriser}
+    \centering
+    \Huge\textbf{CTRL + MAJ + R}\\
+    \normalsize Installer l'extension VSCode : \texttt{ext install ms-dotnettools.csdevkit} (CTRL+P)
+
+    \includegraphics[height=0.35\linewidth]{figures/environnement/refactoriser}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Editer plusieurs ligne à la fois}
+    \centering
+    \Huge\textbf{ALT + CLIC}
+
+    \includegraphics[height=0.4\linewidth]{figures/environnement/multi-edition}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Présenter le code source}
+    \centering
+    \Huge
+    \textbf{CTRL + ALT + F}
+
+    \includegraphics[height=0.4\linewidth]{figures/environnement/mise-en-forme}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Installer CSharpier}
+    \centering
+    \begin{itemize}
+        \item Installer l'outil DotNet : \texttt{dotnet tool install csharpier -g}
+        \item Installer l'extension VSCode : \texttt{ext install csharpier.csharpier-vscode} (CTRL+P)
+        \item Configurer en tant que formateur par défaut (Paramètres)
+        \item Activer \enquote{Format On Save}
+        \item Editer le fichier \texttt{/.vscode/settings.json}):
+    \end{itemize}
+
+    \begin{verbatim}
+    "editor.defaultFormatter": "csharpier.csharpier-vscode",
+    "[csharp]": {
+        "editor.defaultFormatter": "csharpier.csharpier-vscode"
+    },
+    \end{verbatim}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Une commande pour les gouverner toutes}
+    \centering
+    \Huge
+    \textbf{CTRL + MAJ + P}
+
+    \includegraphics[height=0.4\linewidth]{figures/environnement/commande-ultime}
+\end{frame}
+
+
+\subsection{Le débogage}
+\label{subsec:debogage}
+
+% debug, stacktrace,
+
+\subsection{Gestion de version}
+\label{subsec:cvs}
+
+\begin{frame}
+    \frametitle{Git}
+
+    \emph{A silly, incompetent, stupid or annoying person (usually a man).}
+
+    \textbf{Torvalds} sarcastically quipped about the name git:
+    \enquote{I'm an egotistical bastard, and I name all my projects after myself. First 'Linux', now 'git'.}
+
+    \enquote{git} can mean anything, depending on your mood.
+    \begin{itemize}
+        \item Random three-letter combination that is pronounceable, and not actually used by any common UNIX command ;
+        \item \enquote{Global information tracker} ;
+        \item \enquote{Goddamn idiotic truckload of sh*t} ;
+    \end{itemize}
+
+    The source code for Git refers to the program as \enquote{the information manager from hell}.
+\end{frame}
+
+% Git avancé (branche rebase),
+% Comment travailler
+
+%git config --global user.name "Your Name"
+%git config --global user.email "youremail@yourdomain.com"
