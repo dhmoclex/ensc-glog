@@ -1,8 +1,8 @@
 \section{L'environnement du développeur}
 \label{sec:environnement}
 
-\subsection{L'environnement}
-\label{subsec:environnement}
+\subsection{L'éditeur}
+\label{subsec:editeur}
 
 \begin{frame}
     \frametitle{Environnement de développement intégré (IDE)}
@@ -139,6 +139,45 @@
 \subsection{Le débogage}
 \label{subsec:debogage}
 
+\begin{frame}
+    \frametitle{Les erreurs de compilation}
+    \centering
+    \includegraphics[height=0.5\linewidth]{figures/environnement/erreurs-de-compilation}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Poser un point d'arrêt}
+    \centering
+    \includegraphics[height=0.5\linewidth]{figures/environnement/point-arret}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Lancement avec l'environnement de développement}
+    \centering
+    \Huge
+    \textbf{F5}
+
+    \includegraphics[height=0.4\linewidth]{figures/environnement/lancement-du-programme}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Examiner l'état du programme au point d'arrêt}
+    \centering
+    \includegraphics[height=0.5\linewidth]{figures/environnement/déboguage}
+\end{frame}
+
+\begin{frame}
+    \frametitle{La pile d'exécution}
+    \centering
+    \includegraphics[height=0.5\linewidth]{figures/environnement/callstack}
+\end{frame}
+
+\begin{frame}
+    \frametitle{La trace d'appels}
+    \centering
+    \includegraphics[height=0.5\linewidth]{figures/environnement/stacktrace}
+\end{frame}
+
 % debug, stacktrace,
 
 \subsection{Gestion de version}
@@ -162,8 +201,94 @@
     The source code for Git refers to the program as \enquote{the information manager from hell}.
 \end{frame}
 
-% Git avancé (branche rebase),
-% Comment travailler
+\begin{frame}[fragile]
+    \frametitle{Initialiser Git}
 
-%git config --global user.name "Your Name"
-%git config --global user.email "youremail@yourdomain.com"
+    \begin{lstlisting}[language=bash]
+git config --global user.name "Your Name"
+git config --global user.email "youremail@yourdomain.com"
+    \end{lstlisting}
+
+    \begin{center}
+        \includegraphics[height=0.4\linewidth]{figures/environnement/git-init}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Valider \underline{régulièrement} les changements}
+    \centering
+    \begin{columns}
+        \begin{column}{0.35\textwidth}
+            \begin{enumerate}
+                \item Écrire un peu de code ;
+                \item Vérifier le résultat ;
+                \item Valider les modifications.
+            \end{enumerate}
+        \end{column}
+        \begin{column}{0.65\textwidth}
+            \includegraphics[width=\linewidth]{figures/environnement/git-commit}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Les bases}
+    \centering
+    \includegraphics[width=\linewidth]{figures/environnement/git-spaces}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Les espaces}
+    \begin{itemize}
+        \item La remise (stash) : Un endroit où remiser des modifications pendant que vous travaillez sur autre chose.
+        \item L'espace de travail : Votre dossier de travail !
+        \item L'index : L'index (ou \enquote{zone de transit}) maintient un instantané de l'espace de travail qui servira de base pour le prochain commit.
+        \item Le dépôt local : Un sous-répertoire nommé \textbf{.git} qui contient tous les fichiers nécessaires au référentiel.
+        \item Le(s) dépôt(s) distant(s) : Versions de votre projet qui sont hébergés sur le réseau ou Internet, pour mettre toutes vos modifications à la disposition d'autres développeurs.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Liste des commandes de l'espace de travail}
+    \centering
+    \includegraphics[height=0.5\linewidth]{figures/environnement/git-workspace}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Liste des commandes du dépôt local}
+    \centering
+    \includegraphics[width=\linewidth]{figures/environnement/git-local-repo}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Git Cheatsheet}
+    \centering
+
+    \qrcode[height=150pt]{https://ndpsoftware.com/git-cheatsheet.html\#loc=workspace;}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Modèle de branchement -- GitFlow}
+    \centering
+    \includegraphics[width=\linewidth]{figures/environnement/git-branching-gitflow}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Modèle de branchement -- OneFlow}
+    \centering
+    \includegraphics[width=\linewidth]{figures/environnement/git-branching-oneflow}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Modèle de branchement -- NoFlow (SVN)}
+    \centering
+    \includegraphics[width=0.7\linewidth]{figures/environnement/git-branching-noflow}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Une extension pour Git}
+    \centering
+    \normalsize Installer l'extension VSCode : \texttt{ext install eamodio.gitlens} (CTRL+P)
+
+    \includegraphics[height=0.4\linewidth]{figures/environnement/git-lens}
+\end{frame}
