@@ -1,11 +1,6 @@
 \section{Les pratiques du développeur}
 \label{sec:pratiques}
 
-% Réutilisation, Encapsulation maximale, Couplage faible, Cohésion forte, DRY, KISS, YAGNI
-% Loi de demeter
-% SOLID
-% Commentaire, formattage, langue, nommage
-
 \lstset{basicstyle=\ttfamily\tiny}
 
 \subsection{Le nommage}
@@ -13,29 +8,85 @@
 
 \begin{frame}
     \frametitle{Choisir des noms qui ont du sens}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \lstinputlisting[
+                language={[Sharp]C},
+                label=lst:nommage-ko]
+            {figures/pratiques/noms-ko.cs}
+        \end{column}
+        \pause
+        \begin{column}{0.5\textwidth}
+            \lstinputlisting[
+                language={[Sharp]C},
+                label=lst:nommage-ok]
+            {figures/pratiques/noms-ok.cs}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}
     \frametitle{Une langue qui a du sens}
+
+    \begin{itemize}
+        \item Les noms des classes sont des noms ou des groupes nominaux ;
+        \item Les noms des méthodes sont des verbes ou des groupes verbaux ;
+        \item Choisir un mot par concepts ;
+        \item Choisir des noms dans le domaine de la solution ;
+        \item Choisir des noms dans le domaine du problème.
+    \end{itemize}
+
+    Ces points sont à rapprocher des notions
+    de langage dédié (DSL) et de langage ubiquitaire.
+
 \end{frame}
 
-\subsection{Les fonction}
+\subsection{Les fonctions}
 \label{subsec:pratiques-fonctions}
 
 \begin{frame}
-    \frametitle{Des fonctions courtes}
+    \frametitle{Des fonctions lisibles}
+
+    \scalebox{.7}{
+        \lstinputlisting[
+            language={[Sharp]C},
+            label=lst:fonction-ko]
+        {figures/pratiques/fonction-ko.cs}
+    }
 \end{frame}
 
 \begin{frame}
-    \frametitle{Les arguments d'une fonction}
+    \frametitle{Des fonctions lisibles}
+
+    \lstinputlisting[
+        language={[Sharp]C},
+        label=lst:fonction-ok]
+    {figures/pratiques/fonction-ok.cs}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Séparer commandes et demandes}
+    \frametitle{Des fonctions lisibles}
+
+    \begin{itemize}
+        \item Faire court ;
+        \item Faire une seule chose ;
+        \item Un niveau d'abstraction par fonction.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Programmation structurée}
+    \frametitle{Arguments et retour d'une fonction}
+
+    \begin{itemize}
+        \item Idéalement, le nombre d’arguments d’une fonction devrait être égal à zéro ;
+        \item Encapsuler dans des objets si plus de deux arguments ;
+        \item Éviter les effets secondaires ;
+        \item Éviter les arguments de sortie ;
+        \item Séparer commandes et demandes ;
+        \item Préférer les exceptions au retour de codes d’erreur ;
+        \item Faire de la programmation structurée.
+    \end{itemize}
 \end{frame}
 
 \subsection{Les commentaires}
@@ -43,14 +94,58 @@
 
 \begin{frame}
     \frametitle{Les commentaires ne compensent pas du mauvais code}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \lstinputlisting[
+                language={[Sharp]C},
+                label=lst:comment-ko]
+            {figures/pratiques/comment-ko.cs}
+        \end{column}
+        \pause
+        \begin{column}{0.5\textwidth}
+            \lstinputlisting[
+                language={[Sharp]C},
+                label=lst:comment-ok]
+            {figures/pratiques/comment-ok.cs}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Les bons commentaires}
+    \frametitle{Des commentaires informatifs}
+
+    \lstinputlisting[
+        language={[Sharp]C},
+        label=lst:comment-inform]
+    {figures/pratiques/comment-inform.cs}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Expliquer les intentions}
+
+    \lstinputlisting[
+        language={[Sharp]C},
+        label=lst:comment-intention]
+    {figures/pratiques/comment-intention.cs}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Avertir des conséquences}
+
+    \lstinputlisting[
+        language={[Sharp]C},
+        label=lst:comment-avertir]
+    {figures/pratiques/comment-avertir.cs}
 \end{frame}
 
 \begin{frame}
     \frametitle{Les mauvais commentaires}
+
+    \lstinputlisting[
+        language={[Sharp]C},
+        label=lst:comment-mauvais]
+    {figures/pratiques/comment-mauvais.cs}
 \end{frame}
 
 \subsection{Les structures de données}
@@ -58,25 +153,89 @@
 
 \begin{frame}
     \frametitle{Abstraction de données}
+
+    Si nous voulons que nos variables soient privées, c’est pour une bonne raison :
+    nous voulons que personne d’autre en dépende.
+    Nous voulons garder la liberté de modifier leur type ou leur implémentation
+    sur un coup de tête ou une envie soudaine.
+
+    \bigskip
+    Dans ce cas, pourquoi tant de programmeurs ajoutent automatiquement
+    des accesseurs (méthodes get et set) à leurs objets,
+    exposant ainsi leurs variables privées comme si elles étaient publiques ?
+\end{frame}
+
+\begin{frame}
+    \frametitle{Abstraction de données}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \lstinputlisting[
+                language={[Sharp]C},
+                label=lst:data-concrete]
+            {figures/pratiques/data-concrete.cs}
+        \end{column}
+        \pause
+        \begin{column}{0.5\textwidth}
+            \lstinputlisting[
+                language={[Sharp]C},
+                label=lst:data-abstract]
+            {figures/pratiques/data-abstract.cs}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}
     \frametitle{Loi de Déméter}
+
+    Un module ne doit pas connaître les détails internes des objets qu’il manipule.
+
+    \bigskip
+    Plus précisément,
+    une méthode f d’une classe C ne doit appeler que les méthodes des éléments suivants :
+    \begin{itemize}
+        \item C ;
+        \item un objet créé par f ;
+        \item un objet passé en argument à f ;
+        \item un objet contenu dans une variable d’instance de C.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Les objets de transfert de données}
+    \frametitle{Les objets de transfert de données (DTO)}
+
+    \lstinputlisting[
+        language={[Sharp]C},
+        label=lst:data-transfer-object]
+    {figures/pratiques/data-transfer-object.cs}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Les objets de transfert de données (DTO)}
+
+    \begin{itemize}
+        \item La forme la plus pure d’une structure de données est
+        une classe avec des variables publiques et aucune fonction.
+        Les DTO sont des structures très utiles, en particulier
+        pour les communications avec les bases de données ou les clients.
+        \item Les enregistrements actifs (Active Record) sont des formes particulières de DTO. Il
+        s’agit de structures de données avec des variables publiques,
+        mais qui offrent généralement des fonctions de navigation telles que save et find.
+    \end{itemize}
 \end{frame}
 
 \subsection{La gestion des erreurs}
 \label{subsec:pratiques-erreurs}
 
-\begin{frame}
-    \frametitle{Comment gérer les erreurs}
-\end{frame}
+%todo: ajouter d'autres exemples de gestion d'erreurs
 
 \begin{frame}
     \frametitle{Les null}
+
+    \lstinputlisting[
+        language={[Sharp]C},
+        label=lst:error-null]
+    {figures/pratiques/error-null.cs}
 \end{frame}
 
 \subsection{Les classes}
