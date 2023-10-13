@@ -1,4 +1,3 @@
-// Mieux
 public static String renderPageWithSetupsAndTeardowns(PageData pageData, boolean isSuite) throws Exception {
   boolean isTestPage = pageData.hasAttribute("Test");
   if (isTestPage) {
@@ -9,13 +8,5 @@ public static String renderPageWithSetupsAndTeardowns(PageData pageData, boolean
     includeTeardownPages(testPage, newPageContent, isSuite);
     pageData.setContent(newPageContent.toString());
   }
-  return pageData.getHtml();
-}
-
-// Encore mieux !
-public static String renderPageWithSetupsAndTeardowns(
-  PageData pageData, boolean isSuite) throws Exception {
-  if (isTestPage(pageData))
-    includeSetupAndTeardownPages(pageData, isSuite);
   return pageData.getHtml();
 }
